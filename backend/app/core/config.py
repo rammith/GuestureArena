@@ -12,6 +12,9 @@ class Settings(BaseSettings):
 
     API_PREFIX: str = "/api/v1"
 
+    MONGODB_URL: str = "mongodb://localhost:27017"
+    MONGODB_DATABASE: str = "smart_hand_gesture_game"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

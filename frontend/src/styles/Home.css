@@ -129,6 +129,16 @@
   font-size: 36px;
 }
 
+/* Home action buttons */
+
+.home-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 /* Start button */
 
 .start-game-btn {
@@ -154,6 +164,36 @@
 
 .start-game-btn span {
   font-size: 21px;
+}
+
+/* Game History button */
+
+.home-history-button {
+  background: rgba(139, 124, 255, 0.06);
+  color: #b6aaff;
+  border: 1px solid rgba(139, 124, 255, 0.45);
+  padding: 17px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+.home-history-button:hover {
+  background: rgba(139, 124, 255, 0.16);
+  border-color: #8b7cff;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 124, 255, 0.15);
+}
+
+.home-history-button:active {
+  transform: translateY(0);
 }
 
 .home-note {
@@ -212,5 +252,17 @@
 
   .gesture-icon {
     font-size: 30px;
+  }
+
+  .home-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .start-game-btn,
+  .home-history-button {
+    width: 100%;
+    justify-content: center;
   }
 }

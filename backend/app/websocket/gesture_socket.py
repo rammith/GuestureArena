@@ -106,6 +106,15 @@ async def gesture_websocket(websocket: WebSocket):
 
     finally:
 
-        await asyncio.to_thread(vision_service.stop)
+        # Mark unfinished games as abandoned
+        if game_id is not None:
+            try:
+                await asyncio.to_thread(
+                    gesture_game_service.abandon_session,
+                    game_id
+                )
+            except Exception as error:
+                print(f"Unable to update game status: {error}")
 
+        await asyncio.to_thread(vision_service.stop)
         camera_lock.release()

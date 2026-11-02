@@ -9,13 +9,19 @@ function Home() {
     navigate("/game");
   };
 
+  const handleGameHistory = () => {
+    navigate("/history");
+  };
+
   return (
     <div className="home-container">
 
       <nav className="home-navbar">
         <div className="logo">
           <span className="logo-icon">✊</span>
-          <span>Gesture<span className="logo-highlight">Play</span></span>
+          <span>
+            Gesture<span className="logo-highlight">Play</span>
+          </span>
         </div>
 
         <div className="nav-label">
@@ -43,6 +49,7 @@ function Home() {
         </p>
 
         <div className="gesture-preview">
+
           <div className="gesture-card">
             <span className="gesture-icon">✊</span>
             <span>ROCK</span>
@@ -57,15 +64,27 @@ function Home() {
             <span className="gesture-icon">✌️</span>
             <span>SCISSORS</span>
           </div>
+
         </div>
 
-        <button
-          className="start-game-btn"
-          onClick={handleStartGame}
-        >
-          Start Playing
-          <span>→</span>
-        </button>
+        <div className="home-actions">
+
+          <button
+            className="start-game-btn"
+            onClick={handleStartGame}
+          >
+            Start Playing
+            <span>→</span>
+          </button>
+
+          <button
+            className="home-history-button"
+            onClick={handleGameHistory}
+          >
+            Game History
+          </button>
+
+        </div>
 
         <p className="home-note">
           No keyboard. No controller. Just your hands.

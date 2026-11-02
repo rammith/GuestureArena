@@ -18,6 +18,12 @@ class GestureGameService:
             "message": session["message"]
         }
 
+
+    def abandon_session(self, game_id):
+
+        return self.game_service.abandon_game(game_id)
+
+
     def play_gesture(self, game_id, gesture):
 
         if gesture not in ["Rock", "Paper", "Scissors"]:
